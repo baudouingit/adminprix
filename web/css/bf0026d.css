@@ -1,0 +1,38 @@
+h1 {
+    color: #6c6159 !important;
+}
+
+table, th, tr, td {
+    border: solid #6c6159 1px !important;
+    padding: 4px;
+    margin: 4rem;
+}
+
+.menu {
+    text-align: center;
+}
+
+label {
+    display: block;
+}
+
+form {
+    margin-left: 3rem;
+}
+
+input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+button {
+    background-color: red;
+    border: 1px solid red;
+    color: white;
+    height: 30px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.show {
+    margin-left: 3rem;
+}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Jure</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ jure.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ jure.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Notice</th>
+                <td>{{ jure.notice }}</td>
+            </tr>
+            <tr>
+                <th>Publie</th>
+                <td>{% if jure.publie %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Vignette</th>
+                <td>{{ jure.vignette }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ jure.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('jures_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('jures_edit', { 'id': jure.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

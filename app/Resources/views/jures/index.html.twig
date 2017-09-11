@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Jures list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Notice</th>
+                <th>Publie</th>
+                <th>Vignette</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for jure in jures %}
+            <tr>
+                <td><a href="{{ path('jures_show', { 'id': jure.id }) }}">{{ jure.nom }}</a></td>
+                <td>{{ jure.prenom }}</td>
+                <td>{{ jure.notice }}</td>
+                <td>{% if jure.publie %}Yes{% else %}No{% endif %}</td>
+                <td>{{ jure.vignette }}</td>
+                <td>{{ jure.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('jures_show', { 'id': jure.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('jures_edit', { 'id': jure.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('jures_new') }}">Create a new jure</a>
+        </li>
+    </ul>
+{% endblock %}

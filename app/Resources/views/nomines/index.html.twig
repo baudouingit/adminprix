@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Nomines list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nominee</th>
+                <th>Domaine</th>
+                <th>Annee</th>
+                <th>Elu</th>
+                <th>Commentaire</th>
+                <th>Longcomm</th>
+                <th>Photo</th>
+                <th>Sid1</th>
+                <th>Nid1</th>
+                <th>Sid2</th>
+                <th>Nid2</th>
+                <th>Sid3</th>
+                <th>Nid3</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for nomine in nomines %}
+            <tr>
+                <td><a href="{{ path('nomines_show', { 'id': nomine.id }) }}">{{ nomine.nominee }}</a></td>
+                <td>{{ nomine.domaine }}</td>
+                <td>{{ nomine.annee }}</td>
+                <td>{% if nomine.elu %}Yes{% else %}No{% endif %}</td>
+                <td>{{ nomine.commentaire }}</td>
+                <td>{{ nomine.longcomm }}</td>
+                <td>{{ nomine.photo }}</td>
+                <td>{{ nomine.sid1 }}</td>
+                <td>{{ nomine.nid1 }}</td>
+                <td>{{ nomine.sid2 }}</td>
+                <td>{{ nomine.nid2 }}</td>
+                <td>{{ nomine.sid3 }}</td>
+                <td>{{ nomine.nid3 }}</td>
+                <td>{{ nomine.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('nomines_show', { 'id': nomine.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('nomines_edit', { 'id': nomine.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('nomines_new') }}">Create a new nomine</a>
+        </li>
+    </ul>
+{% endblock %}
