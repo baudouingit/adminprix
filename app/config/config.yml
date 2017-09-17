@@ -69,8 +69,13 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+# Assetic Configuration
 assetic:
-    debug:          '%kernel.debug%'
-    use_controller: '%kernel.debug%'
-    filters:
-        cssrewrite: ~
+   debug: %kernel.debug%
+   use_controller: false
+   filters:
+       cssrewrite: ~
+       less:
+           node: /usr/local/bin/node
+           node_paths: [/usr/local/lib/node, /usr/local/lib/node_modules]
+

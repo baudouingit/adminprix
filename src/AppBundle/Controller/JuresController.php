@@ -5,8 +5,8 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Jures;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 /**
  * Jure controller.
  *
@@ -39,7 +39,7 @@ class JuresController extends Controller
      */
     public function newAction(Request $request)
     {
-        $jure = new Jure();
+        $jure = new Jures();
         $form = $this->createForm('AppBundle\Form\JuresType', $jure);
         $form->handleRequest($request);
 
